@@ -1,0 +1,725 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* CONFIGURACION GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b1c10;
+    color: #eee5cd;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    background: rgba(8, 25, 13, 0.97);
+    border-bottom: 1px solid #75663e;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex: 1;
+    text-decoration: none;
+}
+
+.marca img {
+    display: block;
+    width: 235px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.boton-menu {
+    border: none;
+    background: transparent;
+    color: #d5bf80;
+    font-size: 29px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    padding: 25px;
+    background: #102818;
+    text-align: center;
+}
+
+.menu.activo {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.menu a {
+    color: #eee5cd;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 88vh;
+
+    background:
+        linear-gradient(
+            rgba(5, 18, 8, 0.35),
+            rgba(5, 18, 8, 0.9)
+        ),
+        url('../imagenes/fondo.jpg');
+
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.portada-contenido {
+    width: 100%;
+    animation: entrada 1.5s ease;
+}
+
+.etiqueta {
+    color: #d5bf80;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.portada h1 {
+    font-size: clamp(50px, 15vw, 85px);
+    color: #d5bf80;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 5px 20px #000;
+}
+
+.portada h2 {
+    font-size: 19px;
+    letter-spacing: 3px;
+}
+
+.linea {
+    width: 85px;
+    height: 2px;
+    background: #c6ad69;
+    margin: 25px auto;
+}
+
+.descripcion {
+    max-width: 320px;
+    margin: 20px auto 30px;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: block;
+    max-width: 290px;
+    margin: 15px auto;
+
+    padding: 17px 20px;
+    background: #c6ad69;
+    color: #102416;
+
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+
+    box-shadow: 0 5px 25px rgba(198,173,105,0.2);
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: #ebd698;
+    transform: scale(1.05);
+}
+
+.boton-transparente {
+    display: block;
+    max-width: 290px;
+    margin: 15px auto;
+
+    padding: 15px;
+    border: 1px solid #c6ad69;
+    border-radius: 40px;
+
+    color: #e8d9aa;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.boton-transparente:hover {
+    background: #c6ad69;
+    color: #102416;
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    padding: 80px 25px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1b3922,
+            #0b1c10
+        );
+}
+
+.bienvenida h2 {
+    color: #d5bf80;
+    font-size: 25px;
+}
+
+.bienvenida p:last-child {
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* HORARIOS */
+
+.horarios {
+    padding: 75px 20px;
+    text-align: center;
+    background: #142c1a;
+}
+
+.horarios h2 {
+    color: #d5bf80;
+    font-size: 25px;
+}
+
+.tarjeta-horarios {
+    max-width: 450px;
+    margin: auto;
+    padding: 35px 20px;
+
+    border: 1px solid #75663e;
+    border-radius: 18px;
+    background: rgba(0,0,0,0.15);
+}
+
+.reloj {
+    color: #d5bf80;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-horarios h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-horarios p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.horario-destacado {
+    font-family: 'Cinzel', serif;
+    font-size: 23px !important;
+    color: #d5bf80;
+    margin: 18px 0;
+}
+
+/* PROMOCIONES */
+
+.promociones {
+    padding: 75px 15px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            #0b1c10,
+            #142c1a,
+            #0b1c10
+        );
+}
+
+.promociones h2 {
+    color: #d5bf80;
+    font-size: 27px;
+}
+
+.descripcion-promos {
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-promo {
+    max-width: 480px;
+    margin: 30px auto;
+
+    border: 1px solid #75663e;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+    transition: transform 0.4s;
+}
+
+.tarjeta-promo:hover {
+    transform: scale(1.02);
+}
+
+.tarjeta-promo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* UBICACION */
+
+.ubicacion {
+    padding: 85px 20px;
+    text-align: center;
+    background: #142c1a;
+}
+
+.ubicacion h2 {
+    color: #d5bf80;
+    font-size: 26px;
+}
+
+.ubicacion p:not(.etiqueta) {
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+/* REDES SOCIALES */
+
+.redes {
+    padding: 75px 20px;
+    text-align: center;
+    background: #0b1c10;
+}
+
+.redes h2 {
+    color: #d5bf80;
+    font-size: 26px;
+}
+
+.redes p:not(.etiqueta) {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.redes-sociales a {
+    width: 60px;
+    height: 60px;
+
+    border: 1px solid #d5bf80;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #d5bf80;
+    transition: 0.3s;
+}
+
+.redes-sociales svg {
+    width: 28px;
+    height: 28px;
+}
+
+.redes-sociales a:hover {
+    background: #d5bf80;
+    color: #102416;
+    transform: translateY(-5px);
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: #07150b;
+}
+
+.logo-footer {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    font-size: 35px;
+    color: #d5bf80;
+}
+
+footer p {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.frase-final {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* ANIMACIONES */
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.revelar {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease,
+                transform 0.8s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* COMPUTADORAS */
+
+@media (min-width: 768px) {
+
+    .encabezado {
+        padding: 15px 8%;
+    }
+
+    .marca img {
+        width: 290px;
+    }
+
+    .boton-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        gap: 25px;
+    }
+
+    .portada {
+        min-height: 90vh;
+    }
+
+    .portada h1 {
+        font-size: 90px;
+    }
+
+    .bienvenida,
+    .horarios,
+    .ubicacion,
+    .redes {
+        padding: 100px 20px;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .portada-contenido {
+        animation: none;
+    }
+
+    .revelar {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* LOGOTIPO CENTRAL DE LA PORTADA */
+
+.logo-portada {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin: 20px auto 30px;
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 5px 20px rgba(0, 0, 0, 0.6)
+    );
+
+    animation: entrada 1.5s ease;
+}
+
+/* LOGOTIPO EN CELULARES */
+
+@media (max-width: 767px) {
+
+    .logo-portada {
+        max-width: 330px;
+        width: 95%;
+    }
+
+}
+
+/* NUEVO PIE DE PAGINA */
+
+footer {
+    background: #07150b;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.imagen-footer {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* ADAPTACION A CELULARES */
+
+@media (max-width: 767px) {
+
+    .imagen-footer {
+        max-width: 100%;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+
+}
+
+/* FONDO DE SELVA EN TODA LA PAGINA */
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 9, 0.78),
+            rgba(5, 20, 9, 0.85)
+        ),
+        url('../imagenes/fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* TODAS LAS SECCIONES CON PLANTAS */
+
+.bienvenida,
+.horarios,
+.promociones,
+.ubicacion,
+.redes {
+
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 9, 0.78),
+            rgba(5, 20, 9, 0.85)
+        ),
+        url('../imagenes/fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* FONDO ADAPTADO A CELULARES */
+
+@media (max-width: 767px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .bienvenida,
+    .horarios,
+    .promociones,
+    .ubicacion,
+    .redes {
+        background-position: center;
+    }
+
+}
+
+/* FONDO DE SELVA EN EL PIE DE PAGINA */
+
+footer {
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 9, 0.78),
+            rgba(5, 20, 9, 0.85)
+        ),
+        url('../imagenes/fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* LOGOTIPO DEL PIE DE PAGINA */
+
+.imagen-footer {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* FONDO DE SELVA EN PROMOCIONES */
+
+.promociones {
+    background-image:
+        linear-gradient(
+            rgba(5, 20, 9, 0.78),
+            rgba(5, 20, 9, 0.85)
+        ),
+        url('../imagenes/fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 75px 15px;
+}
+
+/* TARJETAS DE PROMOCIONES */
+
+.tarjeta-promo {
+    background: transparent;
+    border: 1px solid #75663e;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tarjeta-promo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* PROMOCIONES ORGANIZADAS POR DIAS */
+
+.grupo-promocion {
+    max-width: 550px;
+    margin: 55px auto 70px;
+    text-align: center;
+}
+
+/* TITULOS DE LOS DIAS */
+
+.titulo-dia {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #d5bf80;
+
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+
+    text-shadow: 0 3px 12px rgba(0,0,0,0.8);
+}
+
+/* IMAGENES DE PROMOCIONES */
+
+.grupo-promocion .tarjeta-promo {
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 767px) {
+
+    .titulo-dia {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .grupo-promocion {
+        margin: 45px auto 60px;
+    }
+
+}
+
